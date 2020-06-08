@@ -1,0 +1,555 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      9608,        369]*)
+(*NotebookOutlinePosition[     10556,        398]*)
+(*  CellTagsIndexPosition[     10512,        394]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+    \(Integrate[BesselJ[0, x], {x, 0, \[Infinity]}, 
+      Assumptions \[Rule] {a > 0}]\)], "Input"],
+
+Cell[BoxData[
+    \(1\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Integrate[x\ \ BesselJ[0, x], {x, 0, \[Infinity]}, 
+      Assumptions -> {a > 0}]\)], "Input"],
+
+Cell[BoxData[
+    \(0\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Integrate[x\ ^2\ BesselJ[0, x], {x, 0, \[Infinity]}, 
+      Assumptions -> {a > 0}]\)], "Input"],
+
+Cell[BoxData[
+    \(\(-1\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Integrate[x\ ^3\ BesselJ[0, x], {x, 0, \[Infinity]}]\)], "Input"],
+
+Cell[BoxData[
+    \(0\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Integrate[BesselJ[0, x]/x^2, {x, 1, \[Infinity]}]\)], "Input"],
+
+Cell[BoxData[
+    \(\(-1\) + 
+      HypergeometricPFQ[{\(-\(1\/2\)\)}, {1\/2, 
+          1}, \(-\(1\/4\)\)]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(N[%]\)], "Input"],
+
+Cell[BoxData[
+    \(0.2448775109027932`\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Integrate[BesselJ[0, x]/x^a, {x, w, \[Infinity]}, 
+      Assumptions \[Rule] \ {a > 1, w > 0}]\)], "Input"],
+
+Cell[BoxData[
+    RowBox[{\(Integrate::"gener"\), \(\(:\)\(\ \)\), "\<\"Unable to check \
+convergence. \\!\\(\\*ButtonBox[\\\"More\[Ellipsis]\\\", \
+ButtonStyle->\\\"RefGuideLinkText\\\", ButtonFrame->None, \
+ButtonData:>\\\"Integrate::gener\\\"]\\)\"\>"}]], "Message"],
+
+Cell[BoxData[
+    \(\(2\^\(-a\)\ Gamma[1\/2 - a\/2]\)\/Gamma[\(1 + a\)\/2] + \
+\(\(1\/\(\(-1\) + 
+            a\)\)\((w\^\(1 - a\)\ HypergeometricPFQ[{1\/2 - a\/2}, {1, 
+              3\/2 - a\/2}, \(-\(w\^2\/4\)\)])\)\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Integrate[BesselJ[0, x]/x^ .5, {x, 1, \[Infinity]}]\)], "Input"],
+
+Cell[BoxData[
+    \(0.18869299996431027`\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Integrate[BesselJ[0, x]/x, {x, 1, \[Infinity]}]\)], "Input"],
+
+Cell[BoxData[
+    \(\(-EulerGamma\) + 
+      1\/8\ HypergeometricPFQ[{1, 1}, {2, 2, 2}, \(-\(1\/4\)\)] + 
+      Log[2]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Integrate[BesselJ[0, x]/x^1.5, {x, 1, \[Infinity]}]\)], "Input"],
+
+Cell[BoxData[
+    \(0.2503252080225984`\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Integrate[BesselJ[0, x]/x^2.5, {x, 1, \[Infinity]}]\)], "Input"],
+
+Cell[BoxData[
+    \(0.2306901973900917`\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Integrate[BesselJ[0, x]/x^3, {x, 1, \[Infinity]}]\)], "Input"],
+
+Cell[BoxData[
+    \(1\/128\ \((32 + 32\ EulerGamma - 
+          HypergeometricPFQ[{1, 1}, {2, 3, 3}, \(-\(1\/4\)\)] - 
+          16\ Log[4])\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(N[%]\)], "Input"],
+
+Cell[BoxData[
+    \(0.2133120061793796`\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Integrate[x\ BesselJ[0, x]\ , {x, 0, 1}]\)], "Input"],
+
+Cell[BoxData[
+    \(\(-BesselJ[1, \(-1\)]\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Integrate[x^2\ BesselJ[0, x]\ , {x, 0, 1}]\)], "Input"],
+
+Cell[BoxData[
+    \(1\/2\ \((BesselJ[
+              1, \(-1\)]\ \((\(-2\) + \[Pi]\ StruveH[0, 
+                    1])\) + \[Pi]\ BesselJ[0, \(-1\)]\ StruveH[1, 
+              1])\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Integrate[x^3\ BesselJ[0, x]\ , {x, 0, 1}]\)], "Input"],
+
+Cell[BoxData[
+    \(2\ BesselJ[2, 1] - BesselJ[3, 1]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Integrate[BesselJ[0, x]\ , {x, 0, 1}]\)], "Input"],
+
+Cell[BoxData[
+    \(1\/2\ \((\(-\[Pi]\)\ BesselJ[1, \(-1\)]\ StruveH[0, 1] + 
+          BesselJ[0, \(-1\)]\ \((2 - \[Pi]\ StruveH[1, 1])\))\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(N[%]\)], "Input"],
+
+Cell[BoxData[
+    \(0.9197304100897603`\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Integrate[Exp[\(-x\)] BesselJ[0, x]\ , {x, 1, \[Infinity]}]\)], "Input"],
+
+Cell[BoxData[
+    \(\[Integral]\_1\%\[Infinity]\( \[ExponentialE]\^\(-x\)\ BesselJ[0, 
+            x]\) \[DifferentialD]x\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Integrate[Exp[\(-x\)] BesselJ[0, x]\ , {x, 0, \[Infinity]}]\)], "Input"],
+
+Cell[BoxData[
+    \(1\/\@2\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Integrate[Exp[\(-x\)] BesselJ[0, x]\ , {x, 0, 1}]\)], "Input"],
+
+Cell[BoxData[
+    \(\[Integral]\_0\%1\( \[ExponentialE]\^\(-x\)\ BesselJ[0, 
+            x]\) \[DifferentialD]x\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Integrate[Exp[\(-x^2\)] BesselJ[0, x]\ , {x, 0, 1}]\)], "Input"],
+
+Cell[BoxData[
+    \(\[Integral]\_0\%1\( \[ExponentialE]\^\(-x\^2\)\ BesselJ[0, 
+            x]\) \[DifferentialD]x\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Integrate[
+      Exp[\(-x^2\)] BesselJ[0, x]\ , {x, 0, \[Infinity]}]\)], "Input"],
+
+Cell[BoxData[
+    \(\(\@\[Pi]\ BesselI[0, 1\/8]\)\/\(2\ \[ExponentialE]\^\(1/8\)\)\)], \
+"Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Integrate[x^2\ BesselJ[0, x]\ , {x, 1, 2}]\)], "Input"],
+
+Cell[BoxData[
+    \(\(-BesselJ[1, 1]\) + 
+      BesselJ[1, \(-2\)]\ \((\(-4\) + \[Pi]\ StruveH[0, 2])\) + 
+      1\/2\ \[Pi]\ \((BesselJ[1, 1]\ StruveH[0, 1] - 
+            BesselJ[0, 1]\ StruveH[1, 1])\) + \[Pi]\ BesselJ[
+          0, \(-2\)]\ StruveH[1, 2]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(N[%]\)], "Input"],
+
+Cell[BoxData[
+    \(1.043392633899798`\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Integrate[x^2\ BesselJ[0, x]\ , {x, a, b}, 
+      Assumptions \[Rule] \ {a > 0, b > a}]\)], "Input"],
+
+Cell[BoxData[
+    \(1\/2\ \((a\ BesselJ[1, a]\ \((\(-2\)\ a + \[Pi]\ StruveH[0, a])\) + 
+          b\ BesselJ[1, b]\ \((2\ b - \[Pi]\ StruveH[0, b])\) - 
+          a\ \[Pi]\ BesselJ[0, a]\ StruveH[1, a] + 
+          b\ \[Pi]\ BesselJ[0, b]\ StruveH[1, b])\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Integrate[
+      Exp[\[ImaginaryI]\ \((x\ v\  + \ y\ w)\)]/\((1/r^2 + \((v^2 + w^2)\))\)^
+          g, {v, 0, \[Infinity]}, {w, 
+        0, \[Infinity]}, \[IndentingNewLine]Assumptions \[Rule] \ \ {x > 0, 
+          y > 0, g > 1}]\)], "Input"],
+
+Cell[BoxData[
+    \($Aborted\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Integrate[
+      BesselJ[0, w\ x]/\((1/r^2 + w^2)\)^g, {w, 
+        0, \[Infinity]}, \[IndentingNewLine]Assumptions \[Rule] \ \ {x > 0, 
+          y > 0, g > 1, r > 0}]\)], "Input"],
+
+Cell[BoxData[
+    \(1\/2\ r\^\(2\ g\)\ \((\(\@\[Pi]\ Gamma[\(-\(1\/2\)\) + g]\ \
+HypergeometricPFQ[{1\/2}, {1, 3\/2 - g}, x\^2\/\(4\ r\^2\)]\)\/\(r\ \
+Gamma[g]\) + \(\(1\/\(x\ Gamma[
+                  1\/2 + g]\)\)\((2\^\(1 - 2\ g\)\ \((x\^2\/r\^2)\)\^g\ Gamma[
+                1\/2 - g]\ HypergeometricPFQ[{g}, {1\/2 + g, 1\/2 + g}, 
+                x\^2\/\(4\ r\^2\)])\)\))\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(FullSimplify[%]\)], "Input"],
+
+Cell[BoxData[
+    \(\(\(1\/\(\@\(\(-\[ImaginaryI]\)\ x\)\ Gamma[
+            g]\)\)\((2\^\(\(-\(1\/2\)\) - g\)\ r\^\(\(-\(3\/2\)\) + 2\ g\)\ \
+\((2\^\(1\/2 + g\)\ \[Pi]\ \@\(-\(\(\[ImaginaryI]\ x\)\/r\)\)\ Gamma[\(-1\) + 
+                  g]\ HypergeometricPFQ[{1}, {1\/2, 2 - g}, 
+                x\^2\/\(4\ r\^2\)] - 
+            2\ \[Pi]\^\(5/2\)\ \((\(-\(\(\[ImaginaryI]\ x\)\/r\)\))\)\^g\ \
+\((BesselJ[3\/2 - g, \(-\(\(\[ImaginaryI]\ x\)\/r\)\)] + 
+                  BesselJ[\(-\(3\/2\)\) + 
+                        g, \(-\(\(\[ImaginaryI]\ x\)\/r\)\)]\ Csc[
+                      g\ \[Pi]])\)\ Sec[g\ \[Pi]])\))\)\)\)], "Output"]
+}, Open  ]]
+},
+FrontEndVersion->"5.0 for X",
+ScreenRectangle->{{0, 1024}, {0, 768}},
+ScreenStyleEnvironment->"Working",
+WindowSize->{544, 725},
+WindowMargins->{{111, Automatic}, {Automatic, 5}},
+PrintingPageRange->{Automatic, Automatic},
+PrintingOptions->{"PaperSize"->{612, 792},
+"PaperOrientation"->"Portrait",
+"PostScriptOutputFile":>FrontEnd`FileName[{$RootDirectory, "net", "galton", \
+"ga", "haky"}, "Untitled-1.ps", CharacterEncoding -> "iso8859-1"],
+"Magnification"->1}
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 114, 2, 27, "Input"],
+Cell[1893, 57, 35, 1, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[1965, 63, 114, 2, 27, "Input"],
+Cell[2082, 67, 35, 1, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2154, 73, 116, 2, 27, "Input"],
+Cell[2273, 77, 40, 1, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2350, 83, 85, 1, 27, "Input"],
+Cell[2438, 86, 35, 1, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2510, 92, 82, 1, 27, "Input"],
+Cell[2595, 95, 121, 3, 43, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2753, 103, 37, 1, 27, "Input"],
+Cell[2793, 106, 53, 1, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2883, 112, 127, 2, 27, "Input"],
+Cell[3013, 116, 269, 4, 20, "Message"],
+Cell[3285, 122, 234, 4, 55, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3556, 131, 84, 1, 27, "Input"],
+Cell[3643, 134, 54, 1, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3734, 140, 80, 1, 27, "Input"],
+Cell[3817, 143, 132, 3, 43, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3986, 151, 84, 1, 27, "Input"],
+Cell[4073, 154, 53, 1, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4163, 160, 84, 1, 27, "Input"],
+Cell[4250, 163, 53, 1, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4340, 169, 82, 1, 27, "Input"],
+Cell[4425, 172, 156, 3, 44, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4618, 180, 37, 1, 27, "Input"],
+Cell[4658, 183, 53, 1, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4748, 189, 73, 1, 27, "Input"],
+Cell[4824, 192, 57, 1, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4918, 198, 75, 1, 27, "Input"],
+Cell[4996, 201, 195, 4, 43, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5228, 210, 75, 1, 27, "Input"],
+Cell[5306, 213, 66, 1, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5409, 219, 70, 1, 27, "Input"],
+Cell[5482, 222, 155, 2, 43, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5674, 229, 37, 1, 27, "Input"],
+Cell[5714, 232, 53, 1, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5804, 238, 92, 1, 27, "Input"],
+Cell[5899, 241, 135, 2, 42, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6071, 248, 92, 1, 27, "Input"],
+Cell[6166, 251, 40, 1, 48, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6243, 257, 82, 1, 27, "Input"],
+Cell[6328, 260, 125, 2, 43, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6490, 267, 84, 1, 27, "Input"],
+Cell[6577, 270, 128, 2, 43, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6742, 277, 101, 2, 27, "Input"],
+Cell[6846, 281, 98, 2, 50, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6981, 288, 75, 1, 27, "Input"],
+Cell[7059, 291, 272, 5, 77, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7368, 301, 37, 1, 27, "Input"],
+Cell[7408, 304, 52, 1, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7497, 310, 120, 2, 43, "Input"],
+Cell[7620, 314, 271, 4, 77, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7928, 323, 263, 5, 59, "Input"],
+Cell[8194, 330, 42, 1, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[8273, 336, 201, 4, 43, "Input"],
+Cell[8477, 342, 391, 6, 199, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[8905, 353, 48, 1, 27, "Input"],
+Cell[8956, 356, 636, 10, 224, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

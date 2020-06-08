@@ -1,0 +1,339 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      7647,        243]*)
+(*NotebookOutlinePosition[      8314,        266]*)
+(*  CellTagsIndexPosition[      8270,        262]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell[BoxData[
+    \(\(gm = 3;\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \( (*\ generate\ knots\ sequences\ *) \)], "Input"],
+
+Cell[BoxData[
+    \(b = 10; m = 10; mu := \ gm/2;\)], "Input"],
+
+Cell[BoxData[
+    \(\(matern[w_] = 1\/\((1 + w^2)\)^mu;\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(dmat4[w_] = Simplify[D[matern[w], {w, 4}]];\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(dmatint[w_] = Abs[dmat4[w]]^\((1/4)\);\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(roos = 
+        Flatten[Solve[Numerator[dmat4[w]] \[Equal] 0, w]];\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(roo1 = roos[\([2, 2]\)];\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(roo2 = roos[\([4, 2]\)];\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(If[roo1 > roo2, tacho = roo1; roo1 = roo2; 
+        roo2 = tacho];\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(intax[x_] = 
+        If[x <= roo1, 
+          inte = NIntegrate[
+              dmatint[w], {w, 0, x}], \[IndentingNewLine]\t\t\tIf[x <= roo2, 
+            inte\  = \ 
+              NIntegrate[
+                  dmatint[w], {w, 0, roo1}]\[IndentingNewLine]\t\t\t + \ 
+                NIntegrate[
+                  dmatint[w], {w, roo1, 
+                    x}], \[IndentingNewLine]\t\t\t\tinte\  = \ 
+              NIntegrate[
+                  dmatint[w], {w, 0, roo1}]\[IndentingNewLine]\t\t\t + \ 
+                NIntegrate[
+                  dmatint[w], {w, roo1, 
+                    roo2}]\ \[IndentingNewLine]\t\t\t + \ \ NIntegrate[
+                  dmatint[w], {w, roo2, 
+                    x}]\[IndentingNewLine]\t\t\t\t]\[IndentingNewLine]\t\t\t\
+];\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(inteab\  = \ intax[b];\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(taus = Table[0, {i, 1, m}];\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(seed =  .1;\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(taus[\([1]\)] = \(FindRoot[
+            intax[x] \[Equal] \ inteab/m, {x, seed}]\)[\([1, 
+            2]\)];\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(jj = 2;\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(\(While[
+        taus[\([m]\)] \[Equal] 
+          0, \[IndentingNewLine]cand0 = \(FindRoot[
+              intax[x] \[Equal] \ jj\ inteab/m, {x, seed}]\)[\([1, 
+              2]\)]; \[IndentingNewLine]If[cand0 > taus[\([jj - 1]\)], 
+          taus[\([jj]\)] = cand0\ ; \(jj++\);\ , 
+          seed = seed +  .1]\[IndentingNewLine]];\)\(\[IndentingNewLine]\)
+    \)\)], "Input"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(taus4 = taus\)], "Input"],
+
+Cell[BoxData[
+    \({0.1813136124267153`, 0.434542552482562`, 0.6456873186629636`, 
+      0.907170629367316`, 1.3586925857904557`, 1.8099842437055023`, 
+      2.409642183548146`, 3.3388478603686704`, 5.094156605978675`, 
+      9.999999999999998`}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(taus5 = taus\)], "Input"],
+
+Cell[BoxData[
+    \({0.1630461289703114`, 0.392395498005499`, 0.5808693374676732`, 
+      0.8049030389472455`, 1.1911285004574743`, 1.5727242319666193`, 
+      2.0697676606724404`, 2.841493601682316`, 4.372376281747099`, 
+      10.00000000000002`}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(taus6 = taus\)], "Input"],
+
+Cell[BoxData[
+    \({0.14809938928308533`, 0.35769646026487995`, 0.5283177244454542`, 
+      0.7238739460415922`, 1.0588105551212195`, 1.3889597544530978`, 
+      1.8070437841323357`, 2.448383772337446`, 3.7447570949568703`, 
+      9.999999999999972`}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(taus7 = taus\)], "Input"],
+
+Cell[BoxData[
+    \({0.13585688197344584`, 0.3290179697260908`, 0.4854808565614906`, 
+      0.6593584528887537`, 0.9531966621453711`, 1.2454952215645163`, 
+      1.6038360132448384`, 2.142993538231947`, 3.229784539629598`, 
+      10.000000000000075`}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(taus8 = taus\)], "Input"],
+
+Cell[BoxData[
+    \({0.12575705140775392`, 0.3051274023500028`, 0.4502107700416637`, 
+      0.6073240477579309`, 0.8674833582705205`, 1.1318887098059283`, 
+      1.4449411068649525`, 1.9057073204325785`, 2.8203720630465807`, 
+      9.999999999999993`}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(taus20 = tau20\)], "Input"],
+
+Cell[BoxData[
+    RowBox[{\(General::"spell1"\), \(\(:\)\(\ \)\), "\<\"Possible spelling \
+error: new symbol name \\\"\\!\\(taus20\\)\\\" is similar to existing symbol \
+\\\"\\!\\(tau20\\)\\\". \\!\\(\\*ButtonBox[\\\"More\[Ellipsis]\\\", \
+ButtonStyle->\\\"RefGuideLinkText\\\", ButtonFrame->None, \
+ButtonData:>\\\"General::spell1\\\"]\\)\"\>"}]], "Message"],
+
+Cell[BoxData[
+    \({0.07378555133691866`, 0.17800753766516283`, 0.26750172563737223`, 
+      0.3519102510631294`, 0.4519764475842903`, 0.6095267158582697`, 
+      0.7507952458649123`, 0.9263932822514196`, 1.2136279219457593`, 
+      10.00000000001284`}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(taus19 = tau19\)], "Input"],
+
+Cell[BoxData[
+    RowBox[{\(General::"spell1"\), \(\(:\)\(\ \)\), "\<\"Possible spelling \
+error: new symbol name \\\"\\!\\(taus19\\)\\\" is similar to existing symbol \
+\\\"\\!\\(tau19\\)\\\". \\!\\(\\*ButtonBox[\\\"More\[Ellipsis]\\\", \
+ButtonStyle->\\\"RefGuideLinkText\\\", ButtonFrame->None, \
+ButtonData:>\\\"General::spell1\\\"]\\)\"\>"}]], "Message"],
+
+Cell[BoxData[
+    \({0.07594479583974353`, 0.18341865331701604`, 0.27518513053802907`, 
+      0.36226220858449637`, 0.4663084998784393`, 0.6293838407721817`, 
+      0.7759528763159579`, 0.9595979851748541`, 1.2627360596594543`, 
+      10.000000000023556`}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(taus3 = taus\)], "Input"],
+
+Cell[BoxData[
+    \({0.2033804845962401`, 0.48550908034676626`, 0.7252450184539051`, 
+      1.0340710755828328`, 1.5704761414202375`, 2.1146056101677413`, 
+      2.84150464176374`, 3.941828510265601`, 5.857995953486016`, 
+      10.000000000000014`}\)], "Output"]
+}, Open  ]]
+},
+FrontEndVersion->"5.0 for Microsoft Windows",
+ScreenRectangle->{{0, 1920}, {0, 1083}},
+CellGrouping->Manual,
+WindowSize->{1594, 859},
+WindowMargins->{{0, Automatic}, {Automatic, 0}}
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 44, 1, 45, "Input"],
+
+Cell[CellGroupData[{
+Cell[1823, 56, 69, 1, 45, "Input"],
+Cell[1895, 59, 62, 1, 45, "Input"],
+Cell[1960, 62, 70, 1, 72, "Input"],
+Cell[2033, 65, 80, 1, 45, "Input"],
+Cell[2116, 68, 75, 1, 45, "Input"],
+Cell[2194, 71, 103, 2, 45, "Input"],
+Cell[2300, 75, 61, 1, 45, "Input"],
+Cell[2364, 78, 61, 1, 45, "Input"],
+Cell[2428, 81, 103, 2, 45, "Input"],
+Cell[2534, 85, 799, 18, 283, "Input"],
+Cell[3336, 105, 59, 1, 45, "Input"],
+Cell[3398, 108, 64, 1, 45, "Input"],
+Cell[3465, 111, 48, 1, 45, "Input"],
+Cell[3516, 114, 145, 3, 45, "Input"],
+Cell[3664, 119, 44, 1, 45, "Input"],
+Cell[3711, 122, 399, 8, 181, "Input"]
+}, Closed]],
+
+Cell[CellGroupData[{
+Cell[4147, 135, 45, 1, 40, "Input"],
+Cell[4195, 138, 260, 4, 43, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4492, 147, 45, 1, 45, "Input"],
+Cell[4540, 150, 261, 4, 43, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4838, 159, 45, 1, 45, "Input"],
+Cell[4886, 162, 265, 4, 43, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5188, 171, 45, 1, 45, "Input"],
+Cell[5236, 174, 264, 4, 43, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5537, 183, 45, 1, 45, "Input"],
+Cell[5585, 186, 265, 4, 43, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5887, 195, 47, 1, 45, "Input"],
+Cell[5937, 198, 359, 5, 29, "Message"],
+Cell[6299, 205, 267, 4, 43, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6603, 214, 47, 1, 45, "Input"],
+Cell[6653, 217, 359, 5, 29, "Message"],
+Cell[7015, 224, 269, 4, 43, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7321, 233, 45, 1, 45, "Input"],
+Cell[7369, 236, 262, 4, 43, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

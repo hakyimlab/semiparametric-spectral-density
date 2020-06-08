@@ -1,0 +1,68 @@
+# Basics
+SHELL = /bin/sh
+
+# Specify the compiler
+CC = g++
+
+# Optimized compiler options
+CCOPTS = -DINTEL -O3 -Wall -g -march=i686 -fomit-frame-pointer -fno-exceptions
+//CCOPTS = -g -Wall -DNDEBUG -O3 -march=i686
+# Profiling options
+PCOPTS = -DINTEL -g -pg -O3 -march=i686 -fno-exceptions
+
+# Debugging options
+DCOPTS = -DINTEL -DUSE_ASSERTS -Wall -g -march=i686 -fno-exceptions -fno-inline
+
+
+LD = $(CC)
+LDOPTS = $(CCOPTS)
+
+# Here are the files used to make the program.
+HEADERS =  hankel.h g_util.h ripped.h 
+
+SOURCES =  hankel.c htst.c g_util.c ripped.c
+
+OBJECTS = $(SOURCES:.C=.o)
+DEBUGOBJECTS = $(SOURCES:.C=.do)
+PROFOBJECTS = $(SOURCES:.C=.po)
+
+
+# Pattern rules
+%.o : %.C 
+	$(CC) $(CCINCS) $(CCOPTS) -c $<
+
+%.do : %.C 
+	$(CC) $(CCINCS) $(DCOPTS) -c $< -o $@
+
+%.po : %.C 
+	$(CC) $(CCINCS) $(PCOPTS) -c $< -o $@
+
+%.d : %.C 
+	$(CC) -MM $< | sed 's/\(.*\)\.o[ :]*/\1.o $@ : /' > $@
+
+
+# Make the source
+progname : $(HEADERS) $(OBJECTS)
+	$(LD) $(LDOPTS) $(OBJECTS) -o qfht $(LDLIBS)
+
+debug : $(HEADERS) $(DEBUGOBJECTS)
+	$(LD) $(DCOPTS) $(DEBUGOBJECTS) -o debugimagine $(LDLIBS)
+
+profile : $(HEADERS) $(PROFOBJECTS)
+	$(LD) $(PCOPTS) $(PROFOBJECTS) -o profimagine $(LDLIBS)
+
+all : imagine debug profile tags
+
+sources : $(SOURCES)
+
+headers : $(HEADERS)
+
+#include $(SOURCES:.C=.d)
+
+# Make tags files for use with emacs.
+tags: $(HEADERS) $(SOURCES)
+	etags --c++ $(HEADERS) $(SOURCES)
+
+clean :
+	rm -f *.o *.do *.po imagine \
+	debugimagine profimagine

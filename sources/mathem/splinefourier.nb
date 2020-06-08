@@ -1,0 +1,259 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 4.2'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      5530,        173]*)
+(*NotebookOutlinePosition[      6235,        197]*)
+(*  CellTagsIndexPosition[      6191,        193]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+    \(Integrate[Cos[w\ t] w, {w, a, b}, 
+      Assumptions \[Rule] \ {a > 0, b > 0, t > 0}]\)], "Input"],
+
+Cell[BoxData[
+    \(\(\(-Cos[a\ t]\) + Cos[b\ t] - a\ t\ Sin[a\ t] + b\ t\ Sin[b\ \
+t]\)\/t\^2\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Integrate[Cos[w\ t] w^2, {w, a, b}, 
+      Assumptions \[Rule] \ {a > 0, b > 0, t > 0}]\)], "Input"],
+
+Cell[BoxData[
+    \(\(\(-2\)\ a\ t\ Cos[a\ t] + 2\ b\ t\ Cos[b\ t] + 2\ Sin[a\ t] - a\^2\ t\
+\^2\ Sin[a\ t] - 2\ Sin[b\ t] + b\^2\ t\^2\ Sin[b\ t]\)\/t\^3\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Integrate[Cos[w\ t] w^3, {w, a, b}, 
+      Assumptions \[Rule] \ {a > 0, b > 0, t > 0}]\)], "Input"],
+
+Cell[BoxData[
+    \(\(\(1\/t\^4\)\((\((6 - 3\ a\^2\ t\^2)\)\ Cos[a\ t] + 
+        3\ \((\(-2\) + b\^2\ t\^2)\)\ Cos[b\ t] + 6\ a\ t\ Sin[a\ t] - 
+        a\^3\ t\^3\ Sin[a\ t] - 6\ b\ t\ Sin[b\ t] + 
+        b\^3\ t\^3\ Sin[b\ t])\)\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Integrate[Cos[w\ t] w^\((\(-2\))\), {w, a, \[Infinity]}, 
+      Assumptions \[Rule] \ {a > 0, t > 0, mu > 0}]\)], "Input"],
+
+Cell[BoxData[
+    \(\(-\(\(\[Pi]\ t\)\/2\)\) + 
+      HypergeometricPFQ[{\(-\(1\/2\)\)}, {1\/2, 1\/2}, \(-\(1\/4\)\)\ a\^2\ t\
+\^2]\/a\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Integrate[Cos[w\ t] w^\((\(-3\))\), {w, a, \[Infinity]}, 
+      Assumptions \[Rule] \ {a > 0, t > 0, mu > 0}]\)], "Input"],
+
+Cell[BoxData[
+    \(1\/48\ \((\(-a\^2\)\ t\^4\ HypergeometricPFQ[{1, 1}, {2, 5\/2, 
+                3}, \(-\(1\/4\)\)\ a\^2\ t\^2] + 
+          12\ \((2\/a\^2 - 3\ t\^2 + 2\ EulerGamma\ t\^2 + 2\ t\^2\ Log[a] + 
+                2\ t\^2\ Log[t])\))\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Integrate[Cos[w\ t] w^\((\(-2.5\))\), {w, a, \[Infinity]}, 
+      Assumptions \[Rule] \ {a > 0, t > 0, mu > 0}]\)], "Input"],
+
+Cell[BoxData[
+    \(\(-1.671085516420667`\)\ t\^1.5` + \(0.6666666666666664`\ \
+HypergeometricPFQ[{\(-0.75`\)}, {0.25`, 0.5`}, \(-\(1\/4\)\)\ a\^2\ \
+t\^2]\)\/a\^1.5`\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Integrate[Cos[w\ t] w^\((\(-4\))\), {w, a, \[Infinity]}, 
+      Assumptions \[Rule] \ {a > 0, t > 0, mu > 0}]\)], "Input"],
+
+Cell[BoxData[
+    \(1\/12\ \((\[Pi]\ t\^3 + \(4\ HypergeometricPFQ[{\(-\(3\/2\)\)}, {\(-\(1\
+\/2\)\), 1\/2}, \(-\(1\/4\)\)\ a\^2\ t\^2]\)\/a\^3)\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Integrate[Cos[w\ t] w^\((\(-3.5\))\), {w, a, \[Infinity]}, 
+      Assumptions \[Rule] \ {a > 0, t > 0, mu > 0}]\)], "Input"],
+
+Cell[BoxData[
+    \(0.6684342065682668`\ t\^2.5` + \(0.40000000000000013`\ \
+HypergeometricPFQ[{\(-1.25`\)}, {\(-0.25`\), 0.5`}, \(-\(1\/4\)\)\ a\^2\ \
+t\^2]\)\/a\^2.5`\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Integrate[Cos[w\ t] w^\((\(-3.6\))\), {w, a, \[Infinity]}, 
+      Assumptions \[Rule] \ {a > 0, t > 0, mu > 0}]\)], "Input"],
+
+Cell[BoxData[
+    \(0.5223563569922156`\ t\^2.5999999999999996` + \(0.38461538461538447`\ \
+HypergeometricPFQ[{\(-1.2999999999999998`\)}, {\(-0.2999999999999998`\), \
+0.5`}, \(-\(1\/4\)\)\ a\^2\ t\^2]\)\/a\^2.5999999999999996`\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Integrate[Cos[w\ t] w^\((\(-k\))\), {w, a, \[Infinity]}, 
+      Assumptions \[Rule] \ {a > 0, k > 0, t > 0, mu > 0}]\)], "Input"],
+
+Cell[BoxData[
+    \(1\/2\ \[ImaginaryI]\ t\^\(\(-1\) + k\)\ \((\((\(-\[ImaginaryI]\))\)\^k\ \
+Gamma[1 - k, \(-\[ImaginaryI]\)\ a\ t] - \[ImaginaryI]\^k\ Gamma[
+              1 - k, \[ImaginaryI]\ a\ t] - 
+          2\ \[ImaginaryI]\ Gamma[1 - k]\ Sin[\(k\ \[Pi]\)\/2])\)\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input"]
+},
+FrontEndVersion->"4.2 for Microsoft Windows",
+ScreenRectangle->{{0, 1024}, {0, 687}},
+WindowSize->{897, 529},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+PrintingCopies->1,
+PrintingPageRange->{Automatic, Automatic}
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 118, 2, 30, "Input"],
+Cell[1897, 57, 108, 2, 42, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2042, 64, 120, 2, 30, "Input"],
+Cell[2165, 68, 168, 2, 45, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2370, 75, 120, 2, 30, "Input"],
+Cell[2493, 79, 248, 4, 42, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2778, 88, 142, 2, 30, "Input"],
+Cell[2923, 92, 148, 3, 50, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3108, 100, 142, 2, 30, "Input"],
+Cell[3253, 104, 263, 4, 42, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3553, 113, 144, 2, 30, "Input"],
+Cell[3700, 117, 180, 3, 50, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3917, 125, 142, 2, 30, "Input"],
+Cell[4062, 129, 160, 2, 56, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4259, 136, 144, 2, 30, "Input"],
+Cell[4406, 140, 182, 3, 50, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4625, 148, 144, 2, 30, "Input"],
+Cell[4772, 152, 240, 3, 50, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5049, 160, 149, 2, 30, "Input"],
+Cell[5201, 164, 284, 4, 42, "Output"]
+}, Open  ]],
+Cell[5500, 171, 26, 0, 30, "Input"]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

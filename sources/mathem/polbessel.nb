@@ -1,0 +1,525 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     14349,        395]*)
+(*NotebookOutlinePosition[     15056,        419]*)
+(*  CellTagsIndexPosition[     15012,        415]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+    \(int0 = 
+      Integrate[BesselJ[0, x], {x, a, b}, 
+        Assumptions \[Rule] \ {a > 0, b > 0}]\)], "Input"],
+
+Cell[BoxData[
+    \(\(-a\)\ BesselJ[0, a] + b\ BesselJ[0, b] - 
+      1\/2\ a\ \[Pi]\ BesselJ[1, a]\ StruveH[0, a] + 
+      1\/2\ b\ \[Pi]\ BesselJ[1, b]\ StruveH[0, b] + 
+      1\/2\ a\ \[Pi]\ BesselJ[0, a]\ StruveH[1, a] - 
+      1\/2\ b\ \[Pi]\ BesselJ[0, b]\ StruveH[1, b]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Collect[
+      int0, {BesselJ[n_, x_], a, b, \ StruveH[n_, x_], Pi}]\)], "Input"],
+
+Cell[BoxData[
+    \(\(-\(1\/2\)\)\ a\ \[Pi]\ BesselJ[1, a]\ StruveH[0, a] + 
+      1\/2\ b\ \[Pi]\ BesselJ[1, b]\ StruveH[0, b] + 
+      a\ BesselJ[0, a]\ \((\(-1\) + 1\/2\ \[Pi]\ StruveH[1, a])\) + 
+      b\ BesselJ[0, b]\ \((1 - 1\/2\ \[Pi]\ StruveH[1, b])\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(intx0 = 
+      Integrage[x\ BesselJ[0, x], {x, a, b}, 
+        Assumptions \[Rule] \ {a > 0, b > 0}]\)], "Input"],
+
+Cell[BoxData[
+    RowBox[{\(General::"spell1"\), \(\(:\)\(\ \)\), "\<\"Possible spelling \
+error: new symbol name \\\"\\!\\(intx0\\)\\\" is similar to existing symbol \
+\\\"\\!\\(int0\\)\\\". \\!\\(\\*ButtonBox[\\\"More\[Ellipsis]\\\", \
+ButtonStyle->\\\"RefGuideLinkText\\\", ButtonFrame->None, \
+ButtonData:>\\\"General::spell1\\\"]\\)\"\>"}]], "Message"],
+
+Cell[BoxData[
+    RowBox[{\(General::"spell1"\), \(\(:\)\(\ \)\), "\<\"Possible spelling \
+error: new symbol name \\\"\\!\\(Integrage\\)\\\" is similar to existing \
+symbol \\\"\\!\\(Integrate\\)\\\". \
+\\!\\(\\*ButtonBox[\\\"More\[Ellipsis]\\\", ButtonStyle->\\\"RefGuideLinkText\
+\\\", ButtonFrame->None, ButtonData:>\\\"General::spell1\\\"]\\)\"\>"}]], \
+"Message"],
+
+Cell[BoxData[
+    \(Integrage[x\ BesselJ[0, x], {x, a, b}, 
+      Assumptions \[Rule] {a > 0, b > 0}]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(int1 = 
+      Integrate[\((x - k)\)\ BesselJ[0, x], {x, a, b}, 
+        Assumptions \[Rule] \ {a > 0, b > 0}]\)], "Input"],
+
+Cell[BoxData[
+    \(a\ k\ BesselJ[0, a] - b\ k\ BesselJ[0, b] - a\ BesselJ[1, a] + 
+      b\ BesselJ[1, b] + 1\/2\ a\ k\ \[Pi]\ BesselJ[1, a]\ StruveH[0, a] - 
+      1\/2\ b\ k\ \[Pi]\ BesselJ[1, b]\ StruveH[0, b] - 
+      1\/2\ a\ k\ \[Pi]\ BesselJ[0, a]\ StruveH[1, a] + 
+      1\/2\ b\ k\ \[Pi]\ BesselJ[0, b]\ StruveH[1, b]\)], "Output"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Collect[int1, {BesselJ[n_, x_], a, b, StruveH[n_, x_], Pi}]\)], "Input"],
+
+Cell[BoxData[
+    \(a\ BesselJ[1, a]\ \((\(-1\) + 1\/2\ k\ \[Pi]\ StruveH[0, a])\) + 
+      b\ BesselJ[1, b]\ \((1 - 1\/2\ k\ \[Pi]\ StruveH[0, b])\) + 
+      a\ BesselJ[0, a]\ \((k - 1\/2\ k\ \[Pi]\ StruveH[1, a])\) + 
+      b\ BesselJ[0, 
+          b]\ \((\(-k\) + 1\/2\ k\ \[Pi]\ StruveH[1, b])\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(intx1\  = \ 
+      Integrate[\((x - k)\) x\ BesselJ[0, x], {x, a, b}, 
+        Assumptions \[Rule] \ {a > 0, b > 0}]\)], "Input"],
+
+Cell[BoxData[
+    RowBox[{\(General::"spell1"\), \(\(:\)\(\ \)\), "\<\"Possible spelling \
+error: new symbol name \\\"\\!\\(intx1\\)\\\" is similar to existing symbol \
+\\\"\\!\\(int1\\)\\\". \\!\\(\\*ButtonBox[\\\"More\[Ellipsis]\\\", \
+ButtonStyle->\\\"RefGuideLinkText\\\", ButtonFrame->None, \
+ButtonData:>\\\"General::spell1\\\"]\\)\"\>"}]], "Message"],
+
+Cell[BoxData[
+    \(\(-a\^2\)\ BesselJ[1, a] + a\ k\ BesselJ[1, a] + b\^2\ BesselJ[1, b] - 
+      b\ k\ BesselJ[1, b] + 1\/2\ a\ \[Pi]\ BesselJ[1, a]\ StruveH[0, a] - 
+      1\/2\ b\ \[Pi]\ BesselJ[1, b]\ StruveH[0, b] - 
+      1\/2\ a\ \[Pi]\ BesselJ[0, a]\ StruveH[1, a] + 
+      1\/2\ b\ \[Pi]\ BesselJ[0, b]\ StruveH[1, b]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Collect[intx1, {BesselJ[n_, x_], a, b, StruveH[n_, x_], Pi}]\)], "Input"],
+
+Cell[BoxData[
+    \(BesselJ[1, 
+          a]\ \((\(-a\^2\) + a\ \((k + 1\/2\ \[Pi]\ StruveH[0, a])\))\) + 
+      BesselJ[1, 
+          b]\ \((b\^2 + b\ \((\(-k\) - 1\/2\ \[Pi]\ StruveH[0, b])\))\) - 
+      1\/2\ a\ \[Pi]\ BesselJ[0, a]\ StruveH[1, a] + 
+      1\/2\ b\ \[Pi]\ BesselJ[0, b]\ StruveH[1, b]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Integrate[\((x)\) BesselJ[0, x], {x, a, b}, 
+      Assumptions \[Rule] \ {a > 0, b > 0}]\)], "Input"],
+
+Cell[BoxData[
+    \(\(-a\)\ BesselJ[1, a] + b\ BesselJ[1, b]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(int2 = 
+      Integrate[\((x - k)\)^2\ BesselJ[0, x], {x, a, b}, 
+        Assumptions \[Rule] \ {a > 0, b > 0}]\)], "Input"],
+
+Cell[BoxData[
+    \(\(-a\)\ k\^2\ BesselJ[0, a] + b\ k\^2\ BesselJ[0, b] - 
+      a\^2\ BesselJ[1, a] + 2\ a\ k\ BesselJ[1, a] + b\^2\ BesselJ[1, b] - 
+      2\ b\ k\ BesselJ[1, b] + 1\/2\ a\ \[Pi]\ BesselJ[1, a]\ StruveH[0, a] - 
+      1\/2\ a\ k\^2\ \[Pi]\ BesselJ[1, a]\ StruveH[0, a] - 
+      1\/2\ b\ \[Pi]\ BesselJ[1, b]\ StruveH[0, b] + 
+      1\/2\ b\ k\^2\ \[Pi]\ BesselJ[1, b]\ StruveH[0, b] - 
+      1\/2\ a\ \[Pi]\ BesselJ[0, a]\ StruveH[1, a] + 
+      1\/2\ a\ k\^2\ \[Pi]\ BesselJ[0, a]\ StruveH[1, a] + 
+      1\/2\ b\ \[Pi]\ BesselJ[0, b]\ StruveH[1, b] - 
+      1\/2\ b\ k\^2\ \[Pi]\ BesselJ[0, b]\ StruveH[1, b]\)], "Output"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Collect[int2, {BesselJ[n_, x_], a, b, StruveH[n_, x_], Pi}]\)], "Input"],
+
+Cell[BoxData[
+    \(BesselJ[1, 
+          a]\ \((\(-a\^2\) + 
+            a\ \((2\ k + \((1\/2 - k\^2\/2)\)\ \[Pi]\ StruveH[0, a])\))\) + 
+      BesselJ[1, 
+          b]\ \((b\^2 + 
+            b\ \((\(-2\)\ k + \((\(-\(1\/2\)\) + k\^2\/2)\)\ \[Pi]\ StruveH[
+                      0, b])\))\) + 
+      a\ BesselJ[0, 
+          a]\ \((\(-k\^2\) + \((\(-\(1\/2\)\) + k\^2\/2)\)\ \[Pi]\ StruveH[1, 
+                a])\) + 
+      b\ BesselJ[0, 
+          b]\ \((k\^2 + \((1\/2 - k\^2\/2)\)\ \[Pi]\ StruveH[1, 
+                b])\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(intx2 = 
+      Integrate[x \((x - k)\)^2\ BesselJ[0, x], {x, a, b}, 
+        Assumptions \[Rule] \ {a > 0, b > 0}]\)], "Input"],
+
+Cell[BoxData[
+    RowBox[{\(General::"spell1"\), \(\(:\)\(\ \)\), "\<\"Possible spelling \
+error: new symbol name \\\"\\!\\(intx2\\)\\\" is similar to existing symbol \
+\\\"\\!\\(int2\\)\\\". \\!\\(\\*ButtonBox[\\\"More\[Ellipsis]\\\", \
+ButtonStyle->\\\"RefGuideLinkText\\\", ButtonFrame->None, \
+ButtonData:>\\\"General::spell1\\\"]\\)\"\>"}]], "Message"],
+
+Cell[BoxData[
+    \(2\ a\^2\ k\ BesselJ[1, a] - a\ k\^2\ BesselJ[1, a] - 
+      2\ b\^2\ k\ BesselJ[1, b] + b\ k\^2\ BesselJ[1, b] - 
+      2\ a\^2\ BesselJ[2, a] + 2\ b\^2\ BesselJ[2, b] + a\^3\ BesselJ[3, a] - 
+      b\^3\ BesselJ[3, b] - a\ k\ \[Pi]\ BesselJ[1, a]\ StruveH[0, a] + 
+      b\ k\ \[Pi]\ BesselJ[1, b]\ StruveH[0, b] + 
+      a\ k\ \[Pi]\ BesselJ[0, a]\ StruveH[1, a] - 
+      b\ k\ \[Pi]\ BesselJ[0, b]\ StruveH[1, b]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Collect[intx2, {BesselJ[n_, x_], a, b, StruveH[n_, x_], Pi}]\)], "Input"],
+
+Cell[BoxData[
+    \(\(-2\)\ a\^2\ BesselJ[2, a] + 2\ b\^2\ BesselJ[2, b] + 
+      a\^3\ BesselJ[3, a] - b\^3\ BesselJ[3, b] + 
+      BesselJ[1, 
+          a]\ \((2\ a\^2\ k + 
+            a\ \((\(-k\^2\) - k\ \[Pi]\ StruveH[0, a])\))\) + 
+      BesselJ[1, 
+          b]\ \((\(-2\)\ b\^2\ k + 
+            b\ \((k\^2 + k\ \[Pi]\ StruveH[0, b])\))\) + 
+      a\ k\ \[Pi]\ BesselJ[0, a]\ StruveH[1, a] - 
+      b\ k\ \[Pi]\ BesselJ[0, b]\ StruveH[1, b]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Integrate[\((x)\)^2\ BesselJ[0, x], {x, a, b}, 
+      Assumptions \[Rule] \ {a > 0, b > 0}]\)], "Input"],
+
+Cell[BoxData[
+    \(\(-a\^2\)\ BesselJ[1, a] + b\^2\ BesselJ[1, b] + 
+      1\/2\ a\ \[Pi]\ BesselJ[1, a]\ StruveH[0, a] - 
+      1\/2\ b\ \[Pi]\ BesselJ[1, b]\ StruveH[0, b] - 
+      1\/2\ a\ \[Pi]\ BesselJ[0, a]\ StruveH[1, a] + 
+      1\/2\ b\ \[Pi]\ BesselJ[0, b]\ StruveH[1, b]\)], "Output"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(int3 = 
+      Integrate[\((x - k)\)^3\ BesselJ[0, x], {x, a, b}, 
+        Assumptions \[Rule] \ {a > 0, b > 0}]\)], "Input"],
+
+Cell[BoxData[
+    \(\(-2\)\ a\^2\ BesselJ[0, a] + a\ k\^3\ BesselJ[0, a] + 
+      2\ b\^2\ BesselJ[0, b] - b\ k\^3\ BesselJ[0, b] + 4\ a\ BesselJ[1, a] - 
+      a\^3\ BesselJ[1, a] + 3\ a\^2\ k\ BesselJ[1, a] - 
+      3\ a\ k\^2\ BesselJ[1, a] - 4\ b\ BesselJ[1, b] + b\^3\ BesselJ[1, b] - 
+      3\ b\^2\ k\ BesselJ[1, b] + 3\ b\ k\^2\ BesselJ[1, b] - 
+      3\/2\ a\ k\ \[Pi]\ BesselJ[1, a]\ StruveH[0, a] + 
+      1\/2\ a\ k\^3\ \[Pi]\ BesselJ[1, a]\ StruveH[0, a] + 
+      3\/2\ b\ k\ \[Pi]\ BesselJ[1, b]\ StruveH[0, b] - 
+      1\/2\ b\ k\^3\ \[Pi]\ BesselJ[1, b]\ StruveH[0, b] + 
+      3\/2\ a\ k\ \[Pi]\ BesselJ[0, a]\ StruveH[1, a] - 
+      1\/2\ a\ k\^3\ \[Pi]\ BesselJ[0, a]\ StruveH[1, a] - 
+      3\/2\ b\ k\ \[Pi]\ BesselJ[0, b]\ StruveH[1, b] + 
+      1\/2\ b\ k\^3\ \[Pi]\ BesselJ[0, b]\ StruveH[1, b]\)], "Output"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Collect[int3, {BesselJ[n_, x_], a, b, StruveH[n_, x_], Pi}]\)], "Input"],
+
+Cell[BoxData[
+    \(BesselJ[1, 
+          a]\ \((\(-a\^3\) + 3\ a\^2\ k + 
+            a\ \((4 - 
+                  3\ k\^2 + \((\(-\(\(3\ k\)\/2\)\) + 
+                        k\^3\/2)\)\ \[Pi]\ StruveH[0, a])\))\) + 
+      BesselJ[1, 
+          b]\ \((b\^3 - 3\ b\^2\ k + 
+            b\ \((\(-4\) + 
+                  3\ k\^2 + \((\(3\ k\)\/2 - k\^3\/2)\)\ \[Pi]\ StruveH[0, 
+                      b])\))\) + 
+      BesselJ[0, 
+          a]\ \((\(-2\)\ a\^2 + 
+            a\ \((k\^3 + \((\(3\ k\)\/2 - k\^3\/2)\)\ \[Pi]\ StruveH[1, 
+                      a])\))\) + 
+      BesselJ[0, 
+          b]\ \((2\ b\^2 + 
+            b\ \((\(-k\^3\) + \((\(-\(\(3\ k\)\/2\)\) + 
+                        k\^3\/2)\)\ \[Pi]\ StruveH[1, b])\))\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(intx3 = 
+      Integrate[x \((x - k)\)^3\ BesselJ[0, x], {x, a, b}, 
+        Assumptions \[Rule] \ {a > 0, b > 0}]\)], "Input"],
+
+Cell[BoxData[
+    RowBox[{\(General::"spell1"\), \(\(:\)\(\ \)\), "\<\"Possible spelling \
+error: new symbol name \\\"\\!\\(intx3\\)\\\" is similar to existing symbol \
+\\\"\\!\\(int3\\)\\\". \\!\\(\\*ButtonBox[\\\"More\[Ellipsis]\\\", \
+ButtonStyle->\\\"RefGuideLinkText\\\", ButtonFrame->None, \
+ButtonData:>\\\"General::spell1\\\"]\\)\"\>"}]], "Message"],
+
+Cell[BoxData[
+    \(\(-3\)\ a\^3\ BesselJ[0, a] + 6\ a\^2\ k\ BesselJ[0, a] + 
+      3\ b\^3\ BesselJ[0, b] - 6\ b\^2\ k\ BesselJ[0, b] + 
+      9\ a\^2\ BesselJ[1, a] - a\^4\ BesselJ[1, a] - 
+      12\ a\ k\ BesselJ[1, a] + 3\ a\^3\ k\ BesselJ[1, a] - 
+      3\ a\^2\ k\^2\ BesselJ[1, a] + a\ k\^3\ BesselJ[1, a] - 
+      9\ b\^2\ BesselJ[1, b] + b\^4\ BesselJ[1, b] + 
+      12\ b\ k\ BesselJ[1, b] - 3\ b\^3\ k\ BesselJ[1, b] + 
+      3\ b\^2\ k\^2\ BesselJ[1, b] - b\ k\^3\ BesselJ[1, b] - 
+      9\/2\ a\ \[Pi]\ BesselJ[1, a]\ StruveH[0, a] + 
+      3\/2\ a\ k\^2\ \[Pi]\ BesselJ[1, a]\ StruveH[0, a] + 
+      9\/2\ b\ \[Pi]\ BesselJ[1, b]\ StruveH[0, b] - 
+      3\/2\ b\ k\^2\ \[Pi]\ BesselJ[1, b]\ StruveH[0, b] + 
+      9\/2\ a\ \[Pi]\ BesselJ[0, a]\ StruveH[1, a] - 
+      3\/2\ a\ k\^2\ \[Pi]\ BesselJ[0, a]\ StruveH[1, a] - 
+      9\/2\ b\ \[Pi]\ BesselJ[0, b]\ StruveH[1, b] + 
+      3\/2\ b\ k\^2\ \[Pi]\ BesselJ[0, b]\ StruveH[1, b]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Collect[intx3, {BesselJ[n_, x_], a, b, StruveH[n_, x_], Pi}]\)], "Input"],
+
+Cell[BoxData[
+    \(BesselJ[1, 
+          a]\ \((\(-a\^4\) + 3\ a\^3\ k + a\^2\ \((9 - 3\ k\^2)\) + 
+            a\ \((\(-12\)\ k + 
+                  k\^3 + \((\(-\(9\/2\)\) + \(3\ k\^2\)\/2)\)\ \[Pi]\ StruveH[
+                      0, a])\))\) + 
+      BesselJ[1, 
+          b]\ \((b\^4 - 3\ b\^3\ k + b\^2\ \((\(-9\) + 3\ k\^2)\) + 
+            b\ \((12\ k - 
+                  k\^3 + \((9\/2 - \(3\ k\^2\)\/2)\)\ \[Pi]\ StruveH[0, 
+                      b])\))\) + 
+      BesselJ[0, 
+          a]\ \((\(-3\)\ a\^3 + 6\ a\^2\ k + 
+            a\ \((9\/2 - \(3\ k\^2\)\/2)\)\ \[Pi]\ StruveH[1, a])\) + 
+      BesselJ[0, 
+          b]\ \((3\ b\^3 - 6\ b\^2\ k + 
+            b\ \((\(-\(9\/2\)\) + \(3\ k\^2\)\/2)\)\ \[Pi]\ StruveH[1, 
+                b])\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Integrate[x^3\ BesselJ[0, x], {x, a, b}, 
+      Assumptions \[Rule] \ {a > 0, b > 0}]\)], "Input"],
+
+Cell[BoxData[
+    \(\(-2\)\ a\^2\ BesselJ[2, a] + 2\ b\^2\ BesselJ[2, b] + 
+      a\^3\ BesselJ[3, a] - b\^3\ BesselJ[3, b]\)], "Output"]
+}, Open  ]]
+},
+FrontEndVersion->"5.0 for Microsoft Windows",
+ScreenRectangle->{{0, 1920}, {0, 1079}},
+WindowSize->{1640, 904},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+PrintingCopies->1,
+PrintingPageRange->{Automatic, Automatic}
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 129, 3, 45, "Input"],
+Cell[1908, 58, 290, 5, 111, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2235, 68, 101, 2, 45, "Input"],
+Cell[2339, 72, 274, 4, 111, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2650, 81, 133, 3, 45, "Input"],
+Cell[2786, 86, 357, 5, 29, "Message"],
+Cell[3146, 93, 368, 6, 29, "Message"],
+Cell[3517, 101, 115, 2, 43, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3669, 108, 142, 3, 45, "Input"],
+Cell[3814, 113, 341, 5, 111, "Output"]
+}, Closed]],
+
+Cell[CellGroupData[{
+Cell[4192, 123, 92, 1, 40, "Input"],
+Cell[4287, 126, 313, 5, 111, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4637, 136, 149, 3, 45, "Input"],
+Cell[4789, 141, 357, 5, 29, "Message"],
+Cell[5149, 148, 340, 5, 111, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5526, 158, 93, 1, 45, "Input"],
+Cell[5622, 161, 318, 6, 111, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5977, 172, 121, 2, 45, "Input"],
+Cell[6101, 176, 74, 1, 43, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6212, 182, 144, 3, 45, "Input"],
+Cell[6359, 187, 643, 10, 194, "Output"]
+}, Closed]],
+
+Cell[CellGroupData[{
+Cell[7039, 202, 92, 1, 40, "Input"],
+Cell[7134, 205, 542, 13, 120, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7713, 223, 147, 3, 45, "Input"],
+Cell[7863, 228, 357, 5, 29, "Message"],
+Cell[8223, 235, 449, 7, 105, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[8709, 247, 93, 1, 45, "Input"],
+Cell[8805, 250, 463, 10, 105, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[9305, 265, 124, 2, 45, "Input"],
+Cell[9432, 269, 296, 5, 111, "Output"]
+}, Closed]],
+
+Cell[CellGroupData[{
+Cell[9765, 279, 144, 3, 40, "Input"],
+Cell[9912, 284, 832, 13, 225, "Output"]
+}, Closed]],
+
+Cell[CellGroupData[{
+Cell[10781, 302, 92, 1, 40, "Input"],
+Cell[10876, 305, 750, 18, 232, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[11663, 328, 147, 3, 45, "Input"],
+Cell[11813, 333, 357, 5, 29, "Message"],
+Cell[12173, 340, 961, 16, 256, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[13171, 361, 93, 1, 45, "Input"],
+Cell[13267, 364, 771, 17, 232, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[14075, 386, 118, 2, 45, "Input"],
+Cell[14196, 390, 137, 2, 43, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

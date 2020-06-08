@@ -1,0 +1,404 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     12514,        301]*)
+(*NotebookOutlinePosition[     13484,        331]*)
+(*  CellTagsIndexPosition[     13440,        327]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+    \(Integrate[x^5\ BesselJ[0, x]\ , {x, a, b}, 
+      Assumptions \[Rule] \ {a \[GreaterEqual] 0, b > 0}]\)], "Input"],
+
+Cell[BoxData[
+    \(a\^3\ \((\(-8\) + a\^2)\)\ BesselJ[3, a] - 
+      b\^3\ \((\(-8\) + b\^2)\)\ BesselJ[3, b]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Integrate[x^4\ BesselJ[0, x]\ , {x, a, b}, 
+      Assumptions \[Rule] \ {a \[GreaterEqual] 0, b > 0}]\)], "Input"],
+
+Cell[BoxData[
+    \(1\/2\ \((\(-a\)\ BesselJ[1, 
+              a]\ \((2\ a\ \((\(-9\) + a\^2)\) + 9\ \[Pi]\ StruveH[0, a])\) + 
+          b\ BesselJ[1, 
+              b]\ \((2\ b\ \((\(-9\) + b\^2)\) + 9\ \[Pi]\ StruveH[0, b])\) + 
+          3\ BesselJ[0, a]\ \((\(-2\)\ a\^3 + 3\ a\ \[Pi]\ StruveH[1, a])\) + 
+          3\ BesselJ[0, 
+              b]\ \((2\ b\^3 - 3\ b\ \[Pi]\ StruveH[1, b])\))\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Integrate[x^3\ BesselJ[0, x]\ , {x, a, b}, 
+      Assumptions \[Rule] \ {a \[GreaterEqual] 0, b > 0}]\)], "Input"],
+
+Cell[BoxData[
+    \(\(-2\)\ a\^2\ BesselJ[2, a] + 2\ b\^2\ BesselJ[2, b] + 
+      a\^3\ BesselJ[3, a] - b\^3\ BesselJ[3, b]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Integrate[x^2\ BesselJ[0, x]\ , {x, a, b}, 
+      Assumptions \[Rule] \ {a \[GreaterEqual] 0, b > 0}]\)], "Input"],
+
+Cell[BoxData[
+    \(1\/2\ \((a\ BesselJ[1, a]\ \((\(-2\)\ a + \[Pi]\ StruveH[0, a])\) + 
+          b\ BesselJ[1, b]\ \((2\ b - \[Pi]\ StruveH[0, b])\) - 
+          a\ \[Pi]\ BesselJ[0, a]\ StruveH[1, a] + 
+          b\ \[Pi]\ BesselJ[0, b]\ StruveH[1, b])\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Integrate[x\ BesselJ[0, x]\ , {x, a, b}, 
+      Assumptions \[Rule] \ {a \[GreaterEqual] 0, b > 0}]\)], "Input"],
+
+Cell[BoxData[
+    \(\(-a\)\ BesselJ[1, a] + b\ BesselJ[1, b]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Integrate[BesselJ[0, x]\ , {x, a, b}, 
+      Assumptions \[Rule] \ {a \[GreaterEqual] 0, b > 0}]\)], "Input"],
+
+Cell[BoxData[
+    \(1\/2\ \((\(-a\)\ \[Pi]\ BesselJ[1, a]\ StruveH[0, a] + 
+          b\ \[Pi]\ BesselJ[1, b]\ StruveH[0, b] + 
+          a\ BesselJ[0, a]\ \((\(-2\) + \[Pi]\ StruveH[1, a])\) + 
+          b\ BesselJ[0, b]\ \((2 - \[Pi]\ StruveH[1, b])\))\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Integrate[x^mu\ BesselJ[0, x]\ , {x, a, b}, 
+      Assumptions \[Rule] \ {a \[GreaterEqual] 0, b > 0, 
+          mu\ \[Epsilon]\ Integers, \ mu > 0}]\)], "Input"],
+
+Cell[BoxData[
+    \(1\/2\ Gamma[\(1 + mu\)\/2]\ \((\(-a\^\(1 + mu\)\)\ \
+HypergeometricPFQRegularized[{\(1 + mu\)\/2}, {1, \(3 + mu\)\/2}, \
+\(-\(a\^2\/4\)\)] + 
+          b\^\(1 + mu\)\ HypergeometricPFQRegularized[{\(1 + mu\)\/2}, {1, \
+\(3 + mu\)\/2}, \(-\(b\^2\/4\)\)])\)\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\(zeros = {2.40482555769577, \n5.52007811028631, \n8.65372791291101, \n
+          11.79153443901428, \n14.93091770848779, \n18.07106396791092, \n
+          21.21163662987926, \n24.35247153074930, \n27.49347913204025, \n
+          30.63460646843198, \n33.77582021357357, \n36.91709835366405, \n
+          40.05842576462824, \n43.19979171317673, \n46.34118837166182, \n
+          49.48260989739782, \n52.62405184111500, \n55.76551075501998, \n
+          58.90698392608094, \n62.04846919022717, \n65.18996480020687, \n
+          68.33146932985680, \n71.47298160359374, \n74.61450064370183, \n
+          77.75602563038805, \n80.89755587113763, \n84.03909077693820, \n
+          87.18062984364116, \n90.32217263721049, \n93.46371878194478, \n
+          96.60526795099626, \n99.74681985868060};\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(zeros\)], "Input"],
+
+Cell[BoxData[
+    \({2.40482555769577`, 5.52007811028631`, 8.65372791291101`, 
+      11.79153443901428`, 14.93091770848779`, 18.07106396791092`, 
+      21.21163662987926`, 24.3524715307493`, 27.49347913204025`, 
+      30.63460646843198`, 33.77582021357357`, 36.91709835366405`, 
+      40.05842576462824`, 43.19979171317673`, 46.34118837166182`, 
+      49.48260989739782`, 52.624051841115`, 55.76551075501998`, 
+      58.90698392608094`, 62.04846919022717`, 65.18996480020687`, 
+      68.3314693298568`, 71.47298160359374`, 74.61450064370183`, 
+      77.75602563038805`, 80.89755587113763`, 84.0390907769382`, 
+      87.18062984364116`, 90.32217263721049`, 93.46371878194478`, 
+      96.60526795099626`, 99.7468198586806`}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(exzeros\  = \ Flatten[{ .1, 1, 2, \ zeros, 100}]\)], "Input"],
+
+Cell[BoxData[
+    \({0.1`, 1, 2, 2.40482555769577`, 5.52007811028631`, 8.65372791291101`, 
+      11.79153443901428`, 14.93091770848779`, 18.07106396791092`, 
+      21.21163662987926`, 24.3524715307493`, 27.49347913204025`, 
+      30.63460646843198`, 33.77582021357357`, 36.91709835366405`, 
+      40.05842576462824`, 43.19979171317673`, 46.34118837166182`, 
+      49.48260989739782`, 52.624051841115`, 55.76551075501998`, 
+      58.90698392608094`, 62.04846919022717`, 65.18996480020687`, 
+      68.3314693298568`, 71.47298160359374`, 74.61450064370183`, 
+      77.75602563038805`, 80.89755587113763`, 84.0390907769382`, 
+      87.18062984364116`, 90.32217263721049`, 93.46371878194478`, 
+      96.60526795099626`, 99.7468198586806`, 100}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\(\ \)\(NIntegrate[
+      x/x^gm\ BesselJ[0, x]\  /. 
+        gm \[Rule] \ 4, \[IndentingNewLine]\ \ \ \ \ \ \ \ \ {x,  .1, 
+        zeros[\([1]\)]}, PrecisionGoal \[Rule] \ 14, 
+      MaxRecursion \[Rule] \ 30]\)\(\ \)\)\)], "Input"],
+
+Cell[BoxData[
+    \(49.16021026958794`\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(Length\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Table[{ii, exzeros[\([ii]\)], \ 
+        NIntegrate[
+          x/x^gm\ BesselJ[0, x]\  /. 
+            gm \[Rule] \ 4, \[IndentingNewLine]\ \ \ \ \ \ \ \ \ {x, 
+            exzeros[\([ii]\)], exzeros[\([ii + 1]\)]}, 
+          PrecisionGoal \[Rule] \ 14]\ \[IndentingNewLine]}, {ii, 1, 
+        Length[exzeros] - 1}]\)], "Input"],
+
+Cell[BoxData[
+    \({{1, 0.1`, 48.93198072750706`}, {2, 1, 0.22359219408297637`}, {3, 2, 
+        0.0046373479979104175`}, {4, 
+        2.40482555769577`, \(-0.016371026599257286`\)}, {5, 
+        5.52007811028631`, 0.001808249191203721`}, {6, 
+        8.65372791291101`, \(-0.00048325136588821114`\)}, {7, 
+        11.79153443901428`, 0.00018666331606718807`}, {8, 
+        14.93091770848779`, \(-0.00008856853757931488`\)}, {9, 
+        18.07106396791092`, 0.000047952825281037056`}, {10, 
+        21.21163662987926`, \(-0.00002846585493117696`\)}, {11, 
+        24.3524715307493`, 0.00001808566213484374`}, {12, 
+        27.49347913204025`, \(-0.00001210660349361983`\)}, {13, 
+        30.63460646843198`, 8.446809860402608`*^-6}, {14, 
+        33.77582021357357`, \(-6.09501423211732`*^-6\)}, {15, 
+        36.91709835366405`, 4.522365774585727`*^-6}, {16, 
+        40.05842576462824`, \(-3.435232647081698`*^-6\)}, {17, 
+        43.19979171317673`, 2.66229329666013`*^-6}, {18, 
+        46.34118837166182`, \(-2.0993237446723698`*^-6\)}, {19, 
+        49.48260989739782`, 1.6806143968930414`*^-6}, {20, 
+        52.624051841115`, \(-1.363438810758782`*^-6\)}, {21, 
+        55.76551075501998`, 1.1192555894200637`*^-6}, {22, 
+        58.90698392608094`, \(-9.285405438524582`*^-7\)}, {23, 
+        62.04846919022717`, 7.776530447813266`*^-7}, {24, 
+        65.18996480020687`, \(-6.568815386999105`*^-7\)}, {25, 
+        68.3314693298568`, 5.59193481465067`*^-7}, {26, 
+        71.47298160359374`, \(-4.794175576497406`*^-7\)}, {27, 
+        74.61450064370183`, 4.136976820045616`*^-7}, {28, 
+        77.75602563038805`, \(-3.591216536279771`*^-7\)}, {29, 
+        80.89755587113763`, 3.134643004202645`*^-7}, {30, 
+        84.0390907769382`, \(-2.7500705098642844`*^-7\)}, {31, 
+        87.18062984364116`, 2.424093818747244`*^-7}, {32, 
+        90.32217263721049`, \(-2.1461601893476664`*^-7\)}, {33, 
+        93.46371878194478`, 1.907891326113863`*^-7}, {34, 
+        96.60526795099626`, \(-1.7025823568610142`*^-7\)}, {35, 
+        99.7468198586806`, 2.551163109297965`*^-9}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(MatrixForm[%12]\)], "Input"],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {"1", "2", "0.0046373479979104175`"},
+            {"2", "2.40482555769577`", \(-0.016371026599257286`\)},
+            {"3", "5.52007811028631`", "0.001808249191203721`"},
+            {"4", "8.65372791291101`", \(-0.00048325136588821114`\)},
+            {"5", "11.79153443901428`", "0.00018666331606718807`"},
+            {"6", "14.93091770848779`", \(-0.00008856853757931488`\)},
+            {"7", "18.07106396791092`", "0.000047952825281037056`"},
+            {"8", "21.21163662987926`", \(-0.00002846585493117696`\)},
+            {"9", "24.3524715307493`", "0.00001808566213484374`"},
+            {"10", "27.49347913204025`", \(-0.00001210660349361983`\)},
+            {"11", "30.63460646843198`", "8.446809860402608`*^-6"},
+            {"12", "33.77582021357357`", \(-6.09501423211732`*^-6\)},
+            {"13", "36.91709835366405`", "4.522365774585727`*^-6"},
+            {"14", "40.05842576462824`", \(-3.435232647081698`*^-6\)},
+            {"15", "43.19979171317673`", "2.66229329666013`*^-6"},
+            {"16", "46.34118837166182`", \(-2.0993237446723698`*^-6\)},
+            {"17", "49.48260989739782`", "1.6806143968930414`*^-6"},
+            {"18", "52.624051841115`", \(-1.363438810758782`*^-6\)},
+            {"19", "55.76551075501998`", "1.1192555894200637`*^-6"},
+            {"20", "58.90698392608094`", \(-9.285405438524582`*^-7\)},
+            {"21", "62.04846919022717`", "7.776530447813266`*^-7"},
+            {"22", "65.18996480020687`", \(-6.568815386999105`*^-7\)},
+            {"23", "68.3314693298568`", "5.59193481465067`*^-7"},
+            {"24", "71.47298160359374`", \(-4.794175576497406`*^-7\)},
+            {"25", "74.61450064370183`", "4.136976820045616`*^-7"},
+            {"26", "77.75602563038805`", \(-3.591216536279771`*^-7\)},
+            {"27", "80.89755587113763`", "3.134643004202645`*^-7"},
+            {"28", "84.0390907769382`", \(-2.7500705098642844`*^-7\)},
+            {"29", "87.18062984364116`", "2.424093818747244`*^-7"},
+            {"30", "90.32217263721049`", \(-2.1461601893476664`*^-7\)},
+            {"31", "93.46371878194478`", "1.907891326113863`*^-7"},
+            {"32", "96.60526795099626`", \(-1.7025823568610142`*^-7\)},
+            {"33", "99.7468198586806`", "2.551163109297965`*^-9"}
+            }], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]]
+},
+FrontEndVersion->"5.0 for Microsoft Windows",
+ScreenRectangle->{{0, 1920}, {0, 1079}},
+ScreenStyleEnvironment->"Working",
+WindowSize->{1912, 1026},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+PrintingCopies->1,
+PrintingPageRange->{Automatic, Automatic},
+PrintingOptions->{"PaperSize"->{612, 792},
+"PaperOrientation"->"Portrait",
+"PostScriptOutputFile":>FrontEnd`FileName[{"net", "galton", "ga", "haky"}, \
+"Untitled-1.ps", CharacterEncoding -> "WindowsANSI"],
+"Magnification"->1}
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 134, 2, 45, "Input"],
+Cell[1913, 57, 124, 2, 43, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2074, 64, 134, 2, 45, "Input"],
+Cell[2211, 68, 413, 7, 124, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2661, 80, 134, 2, 45, "Input"],
+Cell[2798, 84, 137, 2, 43, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2972, 91, 134, 2, 45, "Input"],
+Cell[3109, 95, 271, 4, 93, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3417, 104, 132, 2, 45, "Input"],
+Cell[3552, 108, 74, 1, 43, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3663, 114, 129, 2, 45, "Input"],
+Cell[3795, 118, 270, 4, 93, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4102, 127, 182, 3, 45, "Input"],
+Cell[4287, 132, 289, 5, 116, "Output"]
+}, Open  ]],
+Cell[4591, 140, 823, 11, 1099, "Input"],
+
+Cell[CellGroupData[{
+Cell[5439, 155, 38, 1, 45, "Input"],
+Cell[5480, 158, 735, 11, 105, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6252, 174, 81, 1, 45, "Input"],
+Cell[6336, 177, 752, 11, 105, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7125, 193, 256, 5, 79, "Input"],
+Cell[7384, 200, 52, 1, 43, "Output"]
+}, Open  ]],
+Cell[7451, 204, 39, 1, 45, "Input"],
+
+Cell[CellGroupData[{
+Cell[7515, 209, 349, 7, 113, "Input"],
+Cell[7867, 218, 2098, 34, 291, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[10002, 257, 48, 1, 45, "Input"],
+Cell[10053, 260, 2445, 38, 1064, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

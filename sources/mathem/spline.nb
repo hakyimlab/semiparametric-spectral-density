@@ -1,0 +1,214 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      3751,        139]*)
+(*NotebookOutlinePosition[      4380,        161]*)
+(*  CellTagsIndexPosition[      4336,        157]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell[BoxData[
+    \(<< Graphics`Spline`\)], "Input"],
+
+Cell[BoxData[
+    \(<< NumericalMath`SplineFit`\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\(pts = {{0\ , 11.2845}, \n{0.0006, 11.1275}, \n{0.0011, 
+          10.7194}, \n{0.0017, 10.1828}, \n{0.0023, 9.4007}, \n{0.0029, 
+          11.3219}, \n{0.0034, 8.5427}, \n{0.0040, 8.0656}, \n{0.0060, 
+          4.9284}, \n{0.0200, 2.3061}}\)\(\[IndentingNewLine]\)
+    \)\)], "Input"],
+
+Cell[BoxData[
+    \({{0, 11.2845`}, {0.0006`, 11.1275`}, {0.0011`, 10.7194`}, {0.0017`, 
+        10.1828`}, {0.0023`, 9.4007`}, {0.0029`, 11.3219`}, {0.0034`, 
+        8.5427`}, {0.004`, 8.0656`}, {0.006`, 4.9284`}, {0.02`, 
+        2.3061`}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(spline = SplineFit[pts, Cubic]\)], "Input"],
+
+Cell[BoxData[
+    InterpretationBox[\("SplineFunction["\[InvisibleSpace]Cubic\
+\[InvisibleSpace]", "\[InvisibleSpace]{0.`, 9.`}\[InvisibleSpace]", <>]"\),
+      SequenceForm[ "SplineFunction[", Cubic, ", ", {0.0, 9.0}, ", <>]"],
+      Editable->False]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(spline[0]\)], "Input"],
+
+Cell[BoxData[
+    \({0, 11.2845`}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(spline[0.0006]\)], "Input"],
+
+Cell[BoxData[
+    \({3.8058452829064`*^-7, 11.284456399697655`}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(spline[2]\)], "Input"],
+
+Cell[BoxData[
+    \({0.0011000000000000003`, 10.7194`}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(spline[1.5]\)], "Input"],
+
+Cell[BoxData[
+    \({0.0008489039955604885`, 10.922738032741398`}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(spline[1]\)], "Input"],
+
+Cell[BoxData[
+    \({0.0006000000000000001`, 11.1275`}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\((0.0006 + 0.0011)\)/2\)], "Input"],
+
+Cell[BoxData[
+    \(0.0008500000000000001`\)], "Output"]
+}, Open  ]]
+},
+FrontEndVersion->"5.0 for X",
+ScreenRectangle->{{0, 1024}, {0, 768}},
+WindowSize->{520, 600},
+WindowMargins->{{Automatic, 22}, {Automatic, 25}}
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 52, 1, 27, "Input"],
+Cell[1809, 54, 60, 1, 27, "Input"],
+
+Cell[CellGroupData[{
+Cell[1894, 59, 308, 5, 187, "Input"],
+Cell[2205, 66, 256, 4, 75, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2498, 75, 63, 1, 27, "Input"],
+Cell[2564, 78, 263, 4, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2864, 87, 42, 1, 27, "Input"],
+Cell[2909, 90, 47, 1, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2993, 96, 47, 1, 27, "Input"],
+Cell[3043, 99, 77, 1, 28, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3157, 105, 42, 1, 27, "Input"],
+Cell[3202, 108, 68, 1, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3307, 114, 44, 1, 27, "Input"],
+Cell[3354, 117, 79, 1, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3470, 123, 42, 1, 27, "Input"],
+Cell[3515, 126, 68, 1, 27, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3620, 132, 56, 1, 27, "Input"],
+Cell[3679, 135, 56, 1, 27, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+
